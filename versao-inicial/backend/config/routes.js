@@ -5,7 +5,20 @@ module.exports = app =>{
         .post(app.api.user.save)
         .get(app.api.user.get)
 
-        app.route('/users/:id')
+    app.route('/users/:id')
         .put(app.api.user.save)
         .get(app.api.user.getById)
+
+    app.route('/categories')
+        .get(app.api.category.get)
+        .post(app.api.category.save)
+/* Cuidado, tem que ser antes do categories:ID */
+
+    app.route('/categories/tree')
+        .get(app.api.category.getTree)
+
+    app.route('/categories/:id')
+        .put(app.api.category.remove)
+        .get(app.api.category.getById)
+        .put(app.api.category.save)
 }
