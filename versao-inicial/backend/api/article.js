@@ -15,7 +15,7 @@ module.exports = app => {
             existsOrError(article.content, 'Conteúdo não informado')
 
         }catch(msg){
-            res.status(400).send(msg)
+            return res.status(400).send(msg)
         }
 
         if(article.id){
@@ -48,7 +48,7 @@ module.exports = app => {
         }
     }
 
-    const limit = 10//Usando para paginação
+    const limit = 3//Usando para paginação
     const get = async (req, res) => {
         const page = req.query.page || 1
 

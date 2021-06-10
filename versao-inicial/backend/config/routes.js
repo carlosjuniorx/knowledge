@@ -28,7 +28,7 @@ module.exports = app =>{
 
     app.route('/categories/:id')
         .all(app.config.passport.authenticate())    
-        .put(app.api.category.remove)
+        .delete(app.api.category.remove)
         .get(app.api.category.getById)
         .put(app.api.category.save)
 
