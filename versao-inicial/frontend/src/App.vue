@@ -18,8 +18,6 @@ import Content from "./components/template/Content"
 import Footer from "./components/template/Footer"
 import Loading from "./components/template/Loading.vue"
 
-
-
 export default {
 name: "App",
 components: { Header, Menu, Content, Footer, Loading},
@@ -47,6 +45,9 @@ methods:{
 
 		if(res.data){
 			this.$store.commit('setUser', userData)
+			if(this.$mq === 'xs' || this.$mq === 'sm'){
+                this.$store.commit('toggleMenu', false)
+            }
 		}else{
 			localStorage.removeItem(userKey)
 			this.$router.push({name: 'auth'})

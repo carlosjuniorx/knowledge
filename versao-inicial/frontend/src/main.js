@@ -6,6 +6,8 @@ import App from './App'
 import './config/msgs'
 import store from './config/store'
 import router from './config/router'
+import './config/axios'
+import './config/mq'
 
 import './config/bootstrap'
 
